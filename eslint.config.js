@@ -23,6 +23,8 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      'react/react-in-jsx-scope': 'off',      
+      '@typescript-eslint/explicit-function-return-type': 'warn',
     },
   },
 )
