@@ -1,9 +1,9 @@
-function App() {
+import { JSX } from "react"
+import Login from "./pages/login"
 
+function App(): JSX.Element {
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+    <Login />
   )
 }
 
