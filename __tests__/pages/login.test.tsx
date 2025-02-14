@@ -1,6 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import LoginPage from "../../src/pages/login";
+import LoginPage from "../../src/pages/loginPage";
 import userEvent from "@testing-library/user-event";
 
 describe("Login Page", () => {
@@ -17,13 +17,13 @@ describe("Login Page", () => {
   });
 
   test("Must allow data entry into the form", async () => {
-    const emailInput: HTMLElement = screen.getByLabelText(/Nombre de usuario/i);
+    const usernameInput: HTMLElement = screen.getByLabelText(/Nombre de usuario/i);
     const passwordInput: HTMLElement = screen.getByLabelText(/Contraseña/i);
 
-    await userEvent.type(emailInput, "jhon.smith@example.com");
+    await userEvent.type(usernameInput, "jhon.smith@example.com");
     await userEvent.type(passwordInput, "password_example");
 
-    expect(emailInput).toHaveValue("jhon.smith@example.com");
+    expect(usernameInput).toHaveValue("jhon.smith@example.com");
     expect(passwordInput).toHaveValue("password_example");
   });
 })

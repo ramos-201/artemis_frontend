@@ -1,5 +1,5 @@
 import { JSX } from "react"
-import LoginPage from "./pages/login"
+import LoginPage from "./pages/loginPage.tsx"
 
 function App(): JSX.Element {
   return (
