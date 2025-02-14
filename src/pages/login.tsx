@@ -1,6 +1,9 @@
-import { JSX } from "react";
+import {ChangeEvent, JSX, useState} from "react";
 
 function LoginPage(): JSX.Element {
+  const [emailForm, setEmailForm] = useState<string>("");
+  const [passwordForm, setPasswordForm] = useState<string>("");
+
   return (
     <>
       <form data-testid="login-form">
@@ -11,6 +14,8 @@ function LoginPage(): JSX.Element {
             id="username-form"
             type="text"
             required
+            value={emailForm}
+            onChange={(e: ChangeEvent<HTMLInputElement>): void => setEmailForm(e.target.value)}
           />
         </div>
         <div>
@@ -19,6 +24,8 @@ function LoginPage(): JSX.Element {
             id="password-form"
             type="password"
             required
+            value={passwordForm}
+            onChange={(e: ChangeEvent<HTMLInputElement>): void => setPasswordForm(e.target.value)}
           />
         </div>
         <button type="submit">Iniciar Sesión</button>
